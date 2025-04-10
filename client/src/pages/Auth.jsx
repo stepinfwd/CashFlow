@@ -5,6 +5,7 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
 
 function Auth() {
   return (
@@ -21,8 +22,16 @@ function Auth() {
         />
       </SignedOut>
       <SignedIn>
-        <UserButton />
-        <p className="text-gray-700">You are signed in!</p>
+        <div className="flex flex-col space-y-2">
+          <UserButton />
+          <p className="text-gray-700">You are signed in!</p>
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md hover:border-gray-400 hover:shadow-sm transition"
+          >
+            Go to Dashboard
+          </Link>
+        </div>
       </SignedIn>
     </div>
   );
